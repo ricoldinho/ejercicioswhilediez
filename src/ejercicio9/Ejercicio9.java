@@ -8,13 +8,21 @@ public class Ejercicio9 {
         String palabraSecreta = "codigo";
         int contador = 0;
         String palabra;
-
+        boolean acierto = false;
         do{
             System.out.println("Introduce la palabra a adivinar");
             palabra = sc.nextLine();
             contador++;
-        }while(contador != 3 && !palabraSecreta.equalsIgnoreCase(palabra));
-
-      
+            if(palabra.equalsIgnoreCase(palabraSecreta)){
+                acierto = true;
+            }
+                                //acierto == false
+        }while(contador != 3 && !acierto);
+        //acierto == true
+        if(acierto){
+            System.out.println("Has acertado la palabra secreta");
+        }else {
+            System.out.println("Has perdido");
+        }
     }
 }
